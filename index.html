@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Meatball's bakery</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar">
+        <h1 class="game-title">El Meatball's bakery</h1>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel-left">
+          <div class="stats-card">
+            <div class="stat-label">Cookies</div>
+            <div id="cookie-count" class="stat-value">0</div>
+            <div id="cps-count" class="stat-sub">0 CPS</div>
+          </div>
+          <div class="cookie-wrapper">
+            <button id="cookie-button" class="cookie-button" aria-label="Big cookie">
+              <span class="cookie-core"></span>
+            </button>
+            <div id="cookie-fx" class="cookie-fx"></div>
+          </div>
+          <div class="stat-grid">
+            <div>
+              <div class="stat-label">Total clicks</div>
+              <div id="click-count" class="stat-value small">0</div>
+            </div>
+            <div>
+              <div class="stat-label">Legacy points</div>
+              <div id="legacy-count" class="stat-value small">0</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-center">
+          <nav class="tabs" id="tabs">
+            <button class="tab active" data-tab="options">Options</button>
+            <button class="tab" data-tab="stats">Stats</button>
+            <button class="tab" data-tab="info">Info</button>
+            <button class="tab" data-tab="legacy">Legacy</button>
+          </nav>
+          <div id="tab-content" class="tab-content"></div>
+          <div id="toast-area" class="toast-area"></div>
+        </section>
+
+        <section class="panel panel-right">
+          <div class="store-header">
+            <div class="store-modes">
+              <button class="mode-button active" data-mode="buy">Buy</button>
+              <button class="mode-button" data-mode="sell">Sell</button>
+            </div>
+            <div class="store-bulk">
+              <button class="bulk-button active" data-bulk="1">x1</button>
+              <button class="bulk-button" data-bulk="10">x10</button>
+              <button class="bulk-button" data-bulk="100">x100</button>
+            </div>
+          </div>
+          <div class="store-tabs">
+            <button class="store-tab active" data-store="buildings">Buildings</button>
+            <button class="store-tab" data-store="upgrades">Upgrades</button>
+          </div>
+          <div id="store-list" class="store-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="modal-root"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

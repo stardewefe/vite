@@ -1,66 +1,70 @@
-<p align="center">
-  <br>
-  <br>
-  <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://vite.dev/vite-light.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://vite.dev/vite-dark.svg">
-      <img alt="vite logo" src="https://vite.dev/vite-dark.svg" height="60">
-    </picture>
-  </a>
-  <br>
-  <br>
-</p>
-<br/>
-<p align="center">
-  <a href="https://npmjs.com/package/vite"><img src="https://img.shields.io/npm/v/vite.svg" alt="npm package"></a>
-  <a href="https://nodejs.org/en/about/previous-releases"><img src="https://img.shields.io/node/v/vite.svg" alt="node compatibility"></a>
-  <a href="https://github.com/vitejs/vite/actions/workflows/ci.yml"><img src="https://github.com/vitejs/vite/actions/workflows/ci.yml/badge.svg?branch=main" alt="build status"></a>
-  <a href="https://chat.vite.dev"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord" alt="discord chat"></a>
-</p>
-<br/>
+# El Meatball's bakery
 
-# Vite ⚡
+Pixel-art styled single-page incremental game inspired by Cookie Clicker. Built with Vite + Vanilla JS.
 
-> Next Generation Frontend Tooling
+## Setup
 
-- 💡 Instant Server Start
-- ⚡️ Lightning Fast HMR
-- 🛠️ Rich Features
-- 📦 Optimized Build
-- 🔩 Universal Plugin Interface
-- 🔑 Fully Typed APIs
+```bash
+npm i
+npm run dev
+```
 
-Vite (French word for "quick", pronounced [`/viːt/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3), like "veet") is a new breed of frontend build tooling that significantly improves the frontend development experience. It consists of two major parts:
+## Build
 
-- A dev server that serves your source files over [native ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), with [rich built-in features](https://vite.dev/guide/features.html) and astonishingly fast [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement).
+```bash
+npm run build
+```
 
-- A [build command](https://vite.dev/guide/build.html) that bundles your code with [Rollup](https://rollupjs.org), pre-configured to output highly optimized static assets for production.
+## Features
 
-In addition, Vite is highly extensible via its [Plugin API](https://vite.dev/guide/api-plugin.html) and [JavaScript API](https://vite.dev/guide/api-javascript.html) with full typing support.
+- Single-page UI with tabs (Options / Stats / Info / Legacy)
+- LocalStorage save (versioned: `pixel-bakery-v1`)
+- Ascension (legacy points +1% CPS each)
+- Achievements + upgrades + building store
+- Pixel UI, floating text, crumbs, hover glow
+- Import / Export / Hard Reset
 
-[Read the Docs to Learn More](https://vite.dev).
+## Controls
 
-## Packages
+- Click the big cookie to bake cookies.
+- Use Buy/Sell and x1/x10/x100 to trade in bulk.
+- Switch tabs for Options / Stats / Info / Legacy.
 
-| Package                                         | Version (click for changelogs)                                                                                                    |
-| ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| [vite](packages/vite)                           | [![vite version](https://img.shields.io/npm/v/vite.svg?label=%20)](packages/vite/CHANGELOG.md)                                    |
-| [@vitejs/plugin-legacy](packages/plugin-legacy) | [![plugin-legacy version](https://img.shields.io/npm/v/@vitejs/plugin-legacy.svg?label=%20)](packages/plugin-legacy/CHANGELOG.md) |
-| [create-vite](packages/create-vite)             | [![create-vite version](https://img.shields.io/npm/v/create-vite.svg?label=%20)](packages/create-vite/CHANGELOG.md)               |
+## Import / Export format
 
-## Contribution
+Exported data is JSON with a versioned schema:
 
-See [Contributing Guide](CONTRIBUTING.md).
+```json
+{
+  "version": 1,
+  "bakeryName": "El Meatball's bakery",
+  "cookies": 0,
+  "totalCookies": 0,
+  "totalClicks": 0,
+  "buildings": {
+    "cursor": 0,
+    "grandma": 0,
+    "farm": 0,
+    "factory": 0,
+    "bank": 0,
+    "temple": 0
+  },
+  "upgrades": {},
+  "achievements": {},
+  "legacyPoints": 0,
+  "ascends": 0,
+  "settings": {
+    "sound": false,
+    "reducedMotion": false,
+    "numberFormat": "short"
+  },
+  "timePlayed": 0,
+  "lastSave": 0
+}
+```
 
-## License
+## Roadmap
 
-[MIT](LICENSE).
-
-## Sponsors
-
-<p align="center">
-  <a target="_blank" href="https://github.com/sponsors/yyx990803">
-    <img alt="sponsors" src="https://sponsors.vuejs.org/vite.svg?v2">
-  </a>
-</p>
+- Add more buildings & upgrades
+- Add audio packs
+- Add prestige cosmetics
